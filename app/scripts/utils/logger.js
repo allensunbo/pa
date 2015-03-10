@@ -1,8 +1,14 @@
 'use strict';
-define(['angular'], function (angular) {
+// we use utils when we don't need or cannot register angular services
+define(['angular'], function(angular) {
+  var $log;
   return {
     getLogger: function getLogger() {
-      var $log = angular.injector(['ng']).get('$log');
+      // do not create multiple instance
+      if (!$log) {
+        // console.log('new $log created');
+        $log = angular.injector(['ng']).get('$log');
+      }
       return $log;
     }
   };
