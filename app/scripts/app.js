@@ -1,6 +1,6 @@
 /*jshint unused: vars */
-define(['angular', 'route', 'controllers/home', 'controllers/about', 'controllers/login'],
-  function (angular, route, HomeCtrl, AboutCtrl, LoginCtrl) {
+define(['angular', 'routes', 'controllers/home', 'controllers/about', 'controllers/login'],
+  function (angular, routes, HomeCtrl, AboutCtrl, LoginCtrl) {
     'use strict';
 
     /**
@@ -15,34 +15,17 @@ define(['angular', 'route', 'controllers/home', 'controllers/about', 'controller
       .module('proteusApp', [
         'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngAnimate', 'ngTouch',
         'ui.router',
+        'proteusApp.routes',
         'proteusApp.controllers.HomeCtrl',
         'proteusApp.controllers.AboutCtrl',
-        'proteusApp.controllers.LoginCtrl',
-        'proteusApp.route'
-      ])
-      .config(function (/*$stateProvider, $urlRouterProvider*/) {
-        /*console.log('config');
-        $urlRouterProvider.otherwise('/');
+        'proteusApp.controllers.LoginCtrl'
 
-        $stateProvider
-          .state('home', {
-            url: '/',
-            templateUrl: 'views/home.html',
-            controller: 'HomeCtrl'
-          })
-          .state('about', {
-            url: '/about',
-            templateUrl: 'views/about.html',
-            controller: 'AboutCtrl'
-          })
-          .state('login', {
-            url: '/login',
-            templateUrl: 'views/login.html',
-            controller: 'LoginCtrl'
-          });*/
-      });
+      ]);
 
-    app.run(function ($rootScope, $state) {
+    app.config(function () {
+    });
+
+    app.run(function () {
 
     });
 
