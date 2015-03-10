@@ -10,10 +10,6 @@ define(['angular'], function (angular) {
    */
   angular.module('proteusApp.controllers.AboutCtrl', [])
     .controller('AboutCtrl', function ($scope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
+      $scope.content = 'About';
     });
 });
