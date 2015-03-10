@@ -13,32 +13,32 @@ define(['angular', 'controllers/home', 'controllers/about', 'controllers/login']
      */
     return angular
       .module('proteusApp', [
+        'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngAnimate', 'ngTouch',
+        'ui.router',
         'proteusApp.controllers.HomeCtrl',
         'proteusApp.controllers.AboutCtrl',
-        'proteusApp.controllers.LoginCtrl',
-        'ngCookies',
-        'ngResource',
-        'ngSanitize',
-        'ngRoute',
-        'ngAnimate',
-        'ngTouch'
+        'proteusApp.controllers.LoginCtrl'
       ])
-      .config(function ($routeProvider) {
-        $routeProvider
-          .when('/', {
+      .config(function ($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+          .state('home', {
+            url: '/',
             templateUrl: 'views/home.html',
             controller: 'HomeCtrl'
           })
-          .when('/about', {
+          .state('about', {
+            url: '/about',
             templateUrl: 'views/about.html',
             controller: 'AboutCtrl'
           })
-          .when('/login', {
+          .state('login', {
+            url: '/login',
             templateUrl: 'views/login.html',
             controller: 'LoginCtrl'
-          })
-          .otherwise({
-            redirectTo: '/'
           });
+
       });
   });

@@ -21,7 +21,8 @@ requirejs.config({
     'angular-route': '../../bower_components/angular-route/angular-route',
     'angular-sanitize': '../../bower_components/angular-sanitize/angular-sanitize',
     'angular-touch': '../../bower_components/angular-touch/angular-touch',
-    bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'
+    bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap',
+    'angular-ui-router': '../../bower_components/angular-ui-router/release/angular-ui-router'
   },
 
     shim: {
