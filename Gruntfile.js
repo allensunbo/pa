@@ -469,7 +469,7 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'requirejs:dist',
-    'htmlmin'
+    /*'htmlmin'*/
   ]);
 
   grunt.registerTask('default', [

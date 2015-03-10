@@ -6,6 +6,7 @@ define(['angular', 'angular-mocks', 'app'], function(angular, mocks, app) {
 
     // load the controller's module
     beforeEach(module('proteusApp.controllers.AboutCtrl'));
+    console.log('AboutCtrl loaded');
 
     var AboutCtrl,
       scope;
