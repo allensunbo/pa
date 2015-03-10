@@ -9,7 +9,8 @@ define(['angular'], function (angular) {
    * Controller of the proteusApp
    */
   angular.module('proteusApp.controllers.AboutCtrl', [])
-    .controller('AboutCtrl', function ($scope) {
+    .controller('AboutCtrl', function ($scope, $rootScope) {
       $scope.content = 'About';
+      $rootScope.activeLink = 'about';
     });
 });

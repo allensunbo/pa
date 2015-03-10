@@ -1,6 +1,6 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/home', 'controllers/about'],
-  function (angular, HomeCtrl, AboutCtrl) {
+define(['angular', 'controllers/home', 'controllers/about', 'controllers/login'],
+  function (angular, HomeCtrl, AboutCtrl, LoginCtrl) {
     'use strict';
 
     /**
@@ -12,8 +12,10 @@ define(['angular', 'controllers/home', 'controllers/about'],
      * Main module of the application.
      */
     return angular
-      .module('proteusApp', ['proteusApp.controllers.HomeCtrl',
+      .module('proteusApp', [
+        'proteusApp.controllers.HomeCtrl',
         'proteusApp.controllers.AboutCtrl',
+        'proteusApp.controllers.LoginCtrl',
         'ngCookies',
         'ngResource',
         'ngSanitize',
@@ -30,6 +32,10 @@ define(['angular', 'controllers/home', 'controllers/about'],
           .when('/about', {
             templateUrl: 'views/about.html',
             controller: 'AboutCtrl'
+          })
+          .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginCtrl'
           })
           .otherwise({
             redirectTo: '/'
