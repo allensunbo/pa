@@ -19,6 +19,7 @@ module.exports = function (config) {
       {pattern: 'bower_components/angular-route/angular-route.js', included: false},
       {pattern: 'bower_components/angular-sanitize/angular-sanitize.js', included: false},
       {pattern: 'bower_components/angular-touch/angular-touch.js', included: false},
+      {pattern: 'bower_components/angular-ui-router/release/angular-ui-router.js', included: false},
       {pattern: 'app/scripts/*.js', included: false},
       {pattern: 'app/scripts/**/*.js', included: false},
       {pattern: 'test/spec/**/*.js', included: false},

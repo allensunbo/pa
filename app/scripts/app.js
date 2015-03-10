@@ -1,6 +1,6 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/home', 'controllers/about', 'controllers/login'],
-  function (angular, HomeCtrl, AboutCtrl, LoginCtrl) {
+define(['angular', 'route', 'controllers/home', 'controllers/about', 'controllers/login'],
+  function (angular, route, HomeCtrl, AboutCtrl, LoginCtrl) {
     'use strict';
 
     /**
@@ -11,16 +11,17 @@ define(['angular', 'controllers/home', 'controllers/about', 'controllers/login']
      *
      * Main module of the application.
      */
-    return angular
+    var app = angular
       .module('proteusApp', [
         'ngCookies', 'ngResource', 'ngSanitize', 'ngRoute', 'ngAnimate', 'ngTouch',
         'ui.router',
         'proteusApp.controllers.HomeCtrl',
         'proteusApp.controllers.AboutCtrl',
-        'proteusApp.controllers.LoginCtrl'
+        'proteusApp.controllers.LoginCtrl',
+        'proteusApp.route'
       ])
-      .config(function ($stateProvider, $urlRouterProvider) {
-
+      .config(function (/*$stateProvider, $urlRouterProvider*/) {
+        /*console.log('config');
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -38,7 +39,12 @@ define(['angular', 'controllers/home', 'controllers/about', 'controllers/login']
             url: '/login',
             templateUrl: 'views/login.html',
             controller: 'LoginCtrl'
-          });
-
+          });*/
       });
+
+    app.run(function ($rootScope, $state) {
+
+    });
+
+    return app;
   });

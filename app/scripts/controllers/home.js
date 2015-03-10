@@ -8,8 +8,9 @@ define(['angular'], function (angular) {
    * # MainCtrl
    * Controller of the proteusApp
    */
-  angular.module('proteusApp.controllers.HomeCtrl', [])
+  var app = angular.module('proteusApp.controllers.HomeCtrl', [])//jshint ignore:line
     .controller('HomeCtrl', function ($scope, $rootScope) {
+      console.log('HomeCtrl');
       $scope.content = [
         'HTML5 Boilerplate',
         'AngularJS',
