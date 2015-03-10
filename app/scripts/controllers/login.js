@@ -13,7 +13,7 @@ define(['angular'], function(angular) {
       $scope.content = 'login';
       $rootScope.activeLink = 'login';
 
-      $http.get('http://localhost:8080/api/login')
+      $http.get($rootScope.backend.url)
         .success(function(data) {
           $log.info(data);
         });
